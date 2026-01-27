@@ -1,0 +1,64 @@
+<?php include 'nav.php'; ?>
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novosti | Udruga za djecu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="hero-image" style="background-image: url('img/naslovna.png');">
+        <h1>Novosti</h1>
+    </div>
+
+</header>
+
+<main style="max-width: 1000px; margin: 2em auto; padding: 0 1em;">
+    <h1>Najnovije vijesti</h1>
+
+    <section class="news-list">
+
+        <article class="news-item">
+            <img src="img/news/news-1.jpg" alt="Nova djeca u sirotištu" class="news-thumb">
+            <div class="news-content">
+                <p class="news-date">31. prosinca 2025.</p>
+                <h2>Nova djeca u sirotištu od početka 2025.</h2>
+                <p>Pregled broja djece koja su pristigla u sirotište...</p>
+                <a href="news-1.php" class="read-more">VIŠE →</a>
+            </div>
+        </article>
+
+        <article class="news-item">
+            <img src="img/news/news-2.jpg" alt="Humanitarna radionica" class="news-thumb">
+            <div class="news-content">
+                <p class="news-date">15. ožujka 2026.</p>
+                <h2>Humanitarna radionica oslikavanja šalica</h2>
+                <p>Radionica oslikavanja šalica u svrhu prikupljanja donacija...</p>
+                <a href="news-2.php" class="read-more">VIŠE →</a>
+            </div>
+        </article>
+
+        <article class="news-item">
+            <img src="img/news/news-3.jpg" alt="Tradicionalna hrana u Tanzaniji" class="news-thumb">
+            <div class="news-content">
+                <p class="news-date">01. rujna 2026.</p>
+                <h2>Tradicionalna hrana u Tanzaniji</h2>
+                <p>Kultura i prehrana – upoznajte tradicionalna jela Tanzanije...</p>
+                <a href="news-3.php" class="read-more">VIŠE →</a>
+            </div>
+        </article>
+
+    </section>
+</main>
+
+<footer style="background-color:#7a4f3e; color:#fff; text-align:center; padding:1em 0;">
+    <p>&copy; 2026 OHANA. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+
