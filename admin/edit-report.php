@@ -1,5 +1,6 @@
 <?php
 require_once "../config.php";
+include 'nav-admin.php';
 
 if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
@@ -22,7 +23,6 @@ if (isset($_POST['spremi'])) {
 
     $kumce_id = $_POST['kumce_id'];
     $kum_id = $_POST['kum_id'];
-    //$svjedodzba = $_FILES['svjedodzba']['name'];
     $opis = $_POST['opis'];
     $skola = $_POST['skola'];
     $ocjena = $_POST['ocjena'];
@@ -32,6 +32,23 @@ if (isset($_POST['spremi'])) {
     $sql = "UPDATE izvjestaji SET kumce_id=?, kum_id=?, opis=?, skola=?, ocjena=?, zahvala=?, status=? WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("iisssssi", $kumce_id, $kum_id, $opis, $skola, $ocjena, $zahvala, $status, $id);
+
+    $slika = time() . "_" . basename($_FILES['kumce_slika']['name']);
+    $targetDir = "../uploads/kumce/";
+    $targetFile = $targetDir . $slika;
+
+    if (!is_dir($targetDir)) {
+        mkdir($targetDir, 0777, true);
+    }
+
+    if (move_uploaded_file($_FILES['kumce_slika']['tmp_name'], $targetFile)) {
+
+        $updateSlika = $conn->prepare(
+            "UPDATE kumce SET kumce_slika = ? WHERE id = ?"
+        );
+        $updateSlika->bind_param("si", $slika, $kumce_id);
+        $updateSlika->execute();
+    }
 
     if ($stmt->execute()) {
         header("Location:reports.php");
@@ -56,7 +73,7 @@ if (isset($_POST['spremi'])) {
 
     <?php if (!empty($error)) echo "<p style='color:red'>$error</p>"; ?>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <label>Dijete</label>
         <select name="kumce_id" required>
             <?php while ($d = $kumce->fetch_assoc()): ?>
@@ -76,11 +93,10 @@ if (isset($_POST['spremi'])) {
                 </option>
             <?php endwhile; ?>
         </select>
-        <form action="add-report.php" method="POST" enctype="multipart/form-data">
-            <input type="text" name="opis">
-            <input type="file" name="kumce_slika">
-        <button>Spremi</button>
-        </form>
+        
+        <label>Slika kumčeta</label>
+        <input type="file" name="kumce_slika" accept="image/*">
+
         <label>Opis</label>
         <textarea name="opis" rows="5"><?= $report['opis'] ?></textarea>
 

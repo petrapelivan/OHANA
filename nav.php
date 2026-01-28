@@ -14,9 +14,8 @@ session_start();
 
         <ul class="nav-menu">
             <li><a href="index.php">Početna</a></li>
-            <li><a href="news.php">Novosti</a></li>
             <li><a href="about-us.php">O nama</a></li>
-            <li><a href="gallery.php">Galerija</a></li>
+            <li><a href="news.php">Novosti</a></li>
             <li><a href="contact.php">Kontakt</a></li>
 
             <?php if (isset($_SESSION['admin'])): ?>

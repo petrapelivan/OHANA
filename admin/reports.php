@@ -1,5 +1,6 @@
 <?php
 include("../config.php");
+include 'nav-admin.php';
 
 if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
@@ -60,15 +61,7 @@ $result = $conn->query($sql);
 </head>
 <body>
 
-<header>
-    <nav>
-        <ul>
-            <li><a href="../index.php">Početna</a></li>
-            <li><a href="reports.php">Izvještaji</a></li>
-            <li><a href="logout.php">Odjava</a></li>
-        </ul>
-    </nav>
-</header>
+
 
 <main style="padding:2em">
 

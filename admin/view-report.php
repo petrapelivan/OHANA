@@ -1,5 +1,6 @@
 <?php
 require_once "../config.php";
+include 'nav-admin.php';
 
 if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
@@ -10,7 +11,8 @@ if (!isset($_SESSION['admin'])) {
 $id = $_GET['id'];
 
 $sql = "SELECT i.*, k.ime AS kum_ime, k.prezime AS kum_prezime, k.email AS kum_email,
-        d.ime AS dijete_ime, d.prezime AS dijete_prezime, d.datum_rodenja, d.spol
+        d.ime AS dijete_ime, d.prezime AS dijete_prezime,
+        d.datum_rodenja, d.spol, d.kumce_slika
         FROM izvjestaji i
         JOIN kumovi k ON k.id = i.kum_id
         JOIN kumce d ON d.id = i.kumce_id
@@ -32,6 +34,12 @@ $report = $result->fetch_assoc();
 </head>
 <body>
     <h1>Izvještaj #<?= $report['id'] ?></h1>
+    <?php if (!empty($report['kumce_slika'])): ?>
+        <div class="kumce-slika">
+            <img src="../uploads/kumce/<?= $report['kumce_slika']; ?>"
+                alt="Slika kumčeta">
+        </div>
+    <?php endif; ?>
     <p><b>Datum:</b> <?= $report['datum'] ?></p>
     <p><b>Dijete:</b> <?= $report['dijete_ime']." ".$report['dijete_prezime'] ?></p>
     <p><b>Kum:</b> <?= $report['kum_ime']." ".$report['kum_prezime'] ?> (<?= $report['kum_email'] ?>)</p>

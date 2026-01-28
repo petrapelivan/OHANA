@@ -1,5 +1,6 @@
 <?php
 require_once "../config.php";
+include 'nav-admin.php';
 
 if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
@@ -17,6 +18,24 @@ if (isset($_POST['spremi'])) {
     $ocjena = $_POST['ocjena'];
     $zahvala = $_POST['zahvala'];
     $status = $_POST['status'];
+    
+    $ime_slike = null;
+    if (!empty($_FILES['kumce_slika']['name'])) {
+
+        $dozvoljeni_tipovi = ['image/jpeg', 'image/png', 'image/jpg'];
+        if (!in_array($_FILES['kumce_slika']['type'], $dozvoljeni_tipovi)) {
+            $error = "Dozvoljene su samo JPG i PNG slike.";
+        } else {
+
+            $ext = pathinfo($_FILES['kumce_slika']['name'], PATHINFO_EXTENSION);
+            $ime_slike = "kumce_" . $kumce_id . "_" . time() . "." . $ext;
+
+            move_uploaded_file(
+                $_FILES['kumce_slika']['tmp_name'],
+                "../uploads/kumce/" . $ime_slike
+            );
+        }
+    }
 
     $provjera = $conn->prepare("
         SELECT COUNT(*) AS broj
@@ -49,6 +68,12 @@ if (isset($_POST['spremi'])) {
         );
 
         if ($stmt->execute()) {
+            if ($ime_slike !== null) {
+                $up = $conn->prepare("UPDATE kumce SET kumce_slika = ? WHERE id = ?");
+                $up->bind_param("si", $ime_slike, $kumce_id);
+                $up->execute();
+            }
+
             header("Location: reports.php");
             exit();
         } else {
@@ -66,15 +91,6 @@ if (isset($_POST['spremi'])) {
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
-<header>
-    <nav>
-        <ul>
-            <li><a href="reports.php">←- Natrag na izvještaje</a></li>
-            <li><a href="logout.php">Odjava</a></li>
-        </ul>
-    </nav>
-</header>
 
 <main style="padding:2em">
 
@@ -101,11 +117,8 @@ if (isset($_POST['spremi'])) {
         <option value="">-- Prvo odaberi dijete --</option>
     </select>
 
-    <form action="add-report.php" method="POST" enctype="multipart/form-data">
-            <input type="text" name="opis">
-            <input type="file" name="kumce_slika">
-        <button>Spremi</button>
-    </form>
+    <label>Slika kumčeta</label>
+    <input type="file" name="kumce_slika" accept="image/*">
 
     <label>Opis (kako se dijete osjeća)</label>
     <textarea name="opis" rows="5" required></textarea>

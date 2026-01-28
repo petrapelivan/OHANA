@@ -73,7 +73,7 @@
     </section>
 </main>
 
-<footer style="background-color:#7a4f3e; color:#fff; text-align:center; padding:1em 0;">
+<footer>
     <p>&copy; 2026 OHANA. All Rights Reserved.</p>
 </footer>
 

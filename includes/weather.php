@@ -16,11 +16,11 @@ if (!isset($data['current_weather'])) {
 }
 
 $temp = $data['current_weather']['temperature'];
-$weather_code = $data['current_weather']['weathercode'];
+$time = $data['current_weather']['time'];
 
 echo "<div class='weather'>";
 echo "<h3>Trenutna temperatura (Songea, TZ)</h3>";
 echo "<p><strong>{$temp}°C</strong></p>";
-echo "<p>Weather code: {$weather_code}</p>";
+echo "<p>Vrijeme: {$time}</p>";
 echo "</div>";
 ?>

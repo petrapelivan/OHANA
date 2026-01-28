@@ -12,7 +12,7 @@
 
 <header>
     <div class="hero-image" style="background-image: url('img/naslovna.png');">
-        <h1>Kontakt</h1>
+        <h1>Novosti</h1>
     </div>
 
 </header>

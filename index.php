@@ -13,7 +13,7 @@
 <header>
     <div class="hero-image" style="background-image: url('img/naslovna.png');">
         <h1>Dobrodošli u našu udrugu OHANA</h1>
-        <p>Pružamo ljubav i podršku djeci u sirotištu za nezbrinutu djecu. <br> Pridružite nam se i Vi!</p>
+        <p style="background: rgb(255 255 255 / 80%); padding: 10px;">Pružamo ljubav i podršku djeci u sirotištu za nezbrinutu djecu. <br> Pridružite nam se i Vi!</p>
     </div>
 </header>
 
