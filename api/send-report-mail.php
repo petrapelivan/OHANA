@@ -41,13 +41,13 @@ try {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'gsusa26@gmail.com'; 
-    $mail->Password = 'sifra';    
+    $mail->Password = 'SIFRA';    
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
     $mail->CharSet = 'UTF-8'; 
     $mail->setFrom('gsusa26@gmail.com', 'OHANA');
-    $mail->addAddress('pelivan.petra@gmail.com');
+    $mail->addAddress('gsusa@tvz.hr');
 
     $mail->Subject = 'Izvještaj za kumče';
     $mail->Body = "

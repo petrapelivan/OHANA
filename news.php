@@ -17,7 +17,7 @@
 
 </header>
 
-<main style="max-width: 1000px; margin: 2em auto; padding: 0 1em;">
+<main>
     <h1>Najnovije vijesti</h1>
 
     <section class="news-list">
@@ -55,7 +55,7 @@
     </section>
 </main>
 
-<footer style="background-color:#7a4f3e; color:#fff; text-align:center; padding:1em 0;">
+<footer>
     <p>&copy; 2026 OHANA. All Rights Reserved.</p>
 </footer>
 

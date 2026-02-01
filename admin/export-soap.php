@@ -38,4 +38,4 @@ $client = new SoapClient(null, [
 $response = $client->sendReport($xml->asXML());
 
 echo "<h2>$response</h2>";
-echo "<a href='reports.php'>← Povratak</a>";
+echo "<a href='reports.php'>Povratak</a>";

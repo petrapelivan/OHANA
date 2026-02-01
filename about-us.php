@@ -42,13 +42,13 @@
         </div>
     </div>
 
-    <section style="padding: 2em; background-color: #fdf6f0;">
+    <section style="padding:1.5em; background-color: #fdf6f0;">
         <h2 style="padding-left: 16px;">Naša priča</h2>
         <p>Udruga je osnovana 2015. godine, s ciljem da postane podrška djeci bez roditeljske skrbi. Kroz godine, naši volonteri su stvorili sigurno i toplo okruženje za djecu, organizirali radionice, humanitarne događaje, kulturne i edukativne aktivnosti.</p>
         <p>Naši projekti uključuju izradu izvještaja za kumove, radionice kreativnog izražavanja, edukaciju i mnoge druge inicijative koje osnažuju djecu i zajednicu.</p>
     </section>
 
-    <section style="padding: 2em; max-width: 900px; margin: 0 auto;">
+    <section style="max-width: 900px; margin: 0 auto;">
         <h2>Naš tim</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 1em;">
             <div style="flex: 1 1 200px; text-align: center;">
@@ -66,7 +66,7 @@
         </div>
     </section>
 
-    <section style="padding: 2em; text-align:center; background-color:#e6d3c0; border-radius: 8px; margin: 2em;">
+    <section style="padding: 2em; text-align:center; background-color:#f8f5f2; border-radius: 8px; margin: 2em;">
         <h2>Postani dio naše priče!</h2>
         <p>Pridruži nam se kao volonter ili donator i pomozi djeci da imaju sretno i sigurno djetinjstvo.</p>
         <a href="contact.php" style="display:inline-block; background-color:#7a4f3e; color:#fff; padding: 12px 24px; border-radius:6px; text-decoration:none;">Pridruži se</a>

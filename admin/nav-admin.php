@@ -3,7 +3,7 @@
     <div class="nav-container">
 
         <div class="nav-logo">
-            <a href="index.php">
+            <a href="../index.php">
                 <img src="../img/logo.jpeg" alt="OHANA logo">
             </a>
         </div>

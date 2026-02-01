@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-
+<link rel="stylesheet" href="../admin/admin-css.css">
 <nav class="main-nav">
 
     <div class="nav-container">
@@ -20,9 +20,9 @@ session_start();
 
             <?php if (isset($_SESSION['admin'])): ?>
                 <li><a href="admin/reports.php" class="admin-link">Izvještaji</a></li>
-                <li><a href="admin/logout.php" class="admin-link">Logout</a></li>
+                <li><a href="admin/logout.php" class="admin-link">Odjava</a></li>
             <?php else: ?>
-                <li><a href="admin/login.php" class="admin-link">Login</a></li>
+                <li><a href="admin/login.php" class="admin-link">Prijava</a></li>
             <?php endif; ?>
         </ul>
 

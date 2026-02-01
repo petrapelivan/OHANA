@@ -17,7 +17,7 @@
 
 </header>
 
-<main style="max-width:900px; margin:2em auto; padding:0 1em;">
+<main class="news-single">
     <p class="news-date">31. prosinca 2025.</p>
     <h1>Koliko je nove djece došlo u sirotište od početka 2025.</h1>
 

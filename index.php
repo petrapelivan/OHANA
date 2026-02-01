@@ -13,7 +13,6 @@
 <header>
     <div class="hero-image" style="background-image: url('img/naslovna.png');">
         <h1>Dobrodošli u našu udrugu OHANA</h1>
-        <p style="background: rgb(255 255 255 / 80%); padding: 10px;">Pružamo ljubav i podršku djeci u sirotištu za nezbrinutu djecu. <br> Pridružite nam se i Vi!</p>
     </div>
 </header>
 
@@ -22,6 +21,7 @@
     <section class="about-section">
     <h2>O nama</h2>
     <p>
+        Pružamo ljubav i podršku djeci u sirotištu za nezbrinutu djecu. Pridružite nam se i Vi!
         Naša udruga <strong>OHANA</strong> je posvećena djeci bez roditeljske skrbi koja žive i školuju se u Africi. 
         Pružamo sigurno okruženje, kreativne radionice i edukativne programe. 
     </p>
@@ -62,7 +62,7 @@
             </div>
 
             <div class="news-card">
-                <img src="img/news/news-3.jpg" alt="Uređenje dvorišta sirotišta">
+                <img src="img/news/news-4.jpg" alt="Uređenje dvorišta sirotišta">
                 <div class="news-content">
                     <p class="news-date">20. siječanj 2026.</p>
                     <h3>Uređenje dvorišta sirotišta</h3>
@@ -72,7 +72,7 @@
             </div>
 
             <div class="news-card">
-                <img src="img/news/news-3.jpg" alt="Posjet domu za starije osobe">
+                <img src="img/news/news-5.jpg" alt="Posjet domu za starije osobe">
                 <div class="news-content">
                     <p class="news-date">21. siječanj 2026.</p>
                     <h3>Druženje u domu za starije</h3>
@@ -82,7 +82,7 @@
             </div>
 
             <div class="news-card">
-                <img src="img/news/news-3.jpg" alt="Humanitarni sajam u Samoboru">
+                <img src="img/news/news-6.jpg" alt="Humanitarni sajam u Samoboru">
                 <div class="news-content">
                     <p class="news-date">22. siječanj 2026.</p>
                     <h3>Humanitarni božićni sajam</h3>
@@ -93,7 +93,7 @@
         </div>
     </section>
 
-    <section class="kum-section">
+    <section class="kum-section" style="padding: 2em; text-align:center; border-radius: 8px; margin: 1em;">
         <h2>Postani Kum djetetu ❤️</h2>
         <p>
             Vaša podrška omogućuje sigurnost, obrazovanje i sretnije djetinjstvo.

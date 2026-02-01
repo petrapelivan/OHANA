@@ -17,7 +17,7 @@
 
 </header>
 
-<main style="max-width:900px; margin:2em auto; padding:0 1em;">
+<main class="news-single">
     <p class="news-date">01. rujna 2026.</p>
     <h1>Tradicionalna hrana u Tanzaniji</h1>
 

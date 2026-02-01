@@ -64,11 +64,11 @@ if (isset($_POST['spremi'])) {
 <head>
     <meta charset="UTF-8">
     <title>Uredi izvještaj</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin-css.css">
 
 </head>
 <body>
-
+<main class="forma">
     <h1>Uredi izvještaj #<?= $id ?></h1>
 
     <?php if (!empty($error)) echo "<p style='color:red'>$error</p>"; ?>
@@ -101,11 +101,46 @@ if (isset($_POST['spremi'])) {
         <textarea name="opis" rows="5"><?= $report['opis'] ?></textarea>
 
         <label>Škola</label>
-        <input type="text" name="skola" value="<?= $report['skola'] ?>">
+        <select name="skola" required>
+            <option value="Vrtić" <?= $report['skola'] === 'Vrtić' ? 'selected' : '' ?>>
+                Vrtić
+            </option>
+            <option value="Osnovna škola" <?= $report['skola'] === 'Osnovna škola' ? 'selected' : '' ?>>
+                Osnovna škola
+            </option>
+            <option value="Srednja škola" <?= $report['skola'] === 'Srednja škola' ? 'selected' : '' ?>>
+                Srednja škola
+            </option>
+        </select>
 
         <label>Ocjena</label>
-        <input type="text" name="ocjena" value="<?= $report['ocjena'] ?>">
-
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="ocjena" value="A" <?= $report['ocjena'] === 'A' ? 'checked' : '' ?>>
+                A
+            </label>
+            <label>
+                <input type="radio" name="ocjena" value="B" <?= $report['ocjena'] === 'B' ? 'checked' : '' ?>>
+                B
+            </label>
+            <label>
+                <input type="radio" name="ocjena" value="C" <?= $report['ocjena'] === 'C' ? 'checked' : '' ?>>
+                C
+            </label>
+            <label>
+                <input type="radio" name="ocjena" value="D" <?= $report['ocjena'] === 'D' ? 'checked' : '' ?>>
+                D
+            </label>
+            <label>
+                <input type="radio" name="ocjena" value="E" <?= $report['ocjena'] === 'E' ? 'checked' : '' ?>>
+                E
+            </label>
+            <label>
+                <input type="radio" name="ocjena" value="F" <?= $report['ocjena'] === 'F' ? 'checked' : '' ?>>
+                F
+            </label>
+        </div>
+        <br>
         <label>Zahvala</label>
         <textarea name="zahvala" rows="4"><?= $report['zahvala'] ?></textarea>
 
@@ -115,8 +150,11 @@ if (isset($_POST['spremi'])) {
             <option value="gotov" <?= $report['status']=='gotov' ? 'selected' : '' ?>>Gotov</option>
         </select>
 
-        <button type="submit" name="spremi">Spremi</button>
-        <a href="reports.php" class="back-link">← Odustani</a>
+        <div class="form-actions">
+            <a href="reports.php" class="btn-cancel">Odustani</a>
+            <button type="submit" name="spremi" class="btn-save">Spremi izvještaj</button>
+        </div>
     </form>
+</main>
 </body>
 </html>

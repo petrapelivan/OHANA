@@ -19,7 +19,7 @@ $temp = $data['current_weather']['temperature'];
 $time = $data['current_weather']['time'];
 
 echo "<div class='weather'>";
-echo "<h3>Trenutna temperatura (Songea, TZ)</h3>";
+echo "<h3>Trenutna temperatura (Songea, TZ): </h3>";
 echo "<p><strong>{$temp}°C</strong></p>";
 echo "<p>Vrijeme: {$time}</p>";
 echo "</div>";

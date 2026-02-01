@@ -57,13 +57,13 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Izvještaji</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin-css.css">
 </head>
 <body>
 
 
 
-<main style="padding:2em">
+<main>
 
     <h1>Izvještaji o djeci</h1>
 
@@ -71,8 +71,8 @@ $result = $conn->query($sql);
         <a href="add-report.php" style="font-weight:bold;"> + Dodaj novi izvještaj</a>
     </p>
 
-    <table border="1" cellpadding="10" cellspacing="0" width="100%">
-        <tr style="background:#f2f2f2">
+    <table class="reports-table">
+        <tr style="background:#f2f2f2" class="reports-th">
             <th>ID</th>
             <th>Dijete</th>
             <th>Kum (email)</th>
@@ -90,26 +90,28 @@ $result = $conn->query($sql);
                     <td><?= date("d.m.Y", strtotime($row['datum'])); ?></td>
                     <td>
                         <?php if ($row['status'] == 'gotov'): ?>
-                            <span style="color:green;font-weight:bold;">Gotov</span>
+                            <span class="status status-gotov">Gotov</span>
                         <?php else: ?>
-                            <span style="color:orange;font-weight:bold;">Draft</span>
+                            <span class="status status-draft">Draft</span>
                         <?php endif; ?>
                     </td>
-                    <td>
-                        <a href="view-report.php?id=<?= $row['id'] ?>">Pregled</a> |
-                        <a href="edit-report.php?id=<?= $row['id'] ?>">Uredi</a> |
-                        <a href="delete-report.php?id=<?= $row['id']; ?>"
-                        onclick="return confirm('Jeste li sigurni da želite obrisati izvještaj?');">
+                    <td class="actions">
+                        <a class="btn btn-view" href="view-report.php?id=<?= $row['id'] ?>">Pregled</a>
+                        <a class="btn btn-edit" href="edit-report.php?id=<?= $row['id'] ?>">Uredi</a>
+                        <a class="btn btn-delete"
+                        href="delete-report.php?id=<?= $row['id']; ?>"
+                        onclick="return confirm('Jeste li sigurni da želite izbrisati izvještaj?');">
                         Obriši
-                        </a> |
-
+                        </a>
+                        <a class="btn btn-soap" href="export-soap.php?id=<?= $row['id']; ?>">Spremi u XML</a>
                         <?php if ($row['status'] === 'gotov'): ?>
-                            <a href="send-report.php?id=<?= $row['id']; ?>"
-                                onclick="return confirm('Poslati izvještaj na mail?');">
-                                Pošalji mail
+                            <a class="btn btn-mail"
+                            href="send-report.php?id=<?= $row['id']; ?>"
+                            onclick="return confirm('Jeste li sigurni da želite poslati izvještaj na mail?');">
+                            Pošalji mail
                             </a>
-                        <?php endif; ?>|
-                        <a href="export-soap.php?id=<?= $row['id']; ?>">SOAP XML</a>            
+                        <?php endif; ?>
+
                     </td>
                 </tr>
             <?php endwhile; ?>

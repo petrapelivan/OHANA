@@ -17,7 +17,7 @@
 
 </header>
 
-<main style="max-width:900px; margin:2em auto; padding:0 1em;">
+<main class="news-single">
     <p class="news-date">15. ožujka 2026.</p>
     <h1>Humanitarna radionica oslikavanja šalica</h1>
 

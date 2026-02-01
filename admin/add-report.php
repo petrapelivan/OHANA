@@ -88,11 +88,11 @@ if (isset($_POST['spremi'])) {
 <head>
     <meta charset="UTF-8">
     <title>Dodaj izvještaj</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin-css.css">
 </head>
 <body>
 
-<main style="padding:2em">
+<main class="forma">
 
 <h1>Dodavanje izvještaja</h1>
 
@@ -124,11 +124,23 @@ if (isset($_POST['spremi'])) {
     <textarea name="opis" rows="5" required></textarea>
 
     <label>Škola</label>
-    <input type="text" name="skola">
+    <select name="skola" required>
+        <option value="">-- Odaberi školu --</option>
+        <option value="Vrtić">Vrtić</option>
+        <option value="Osnovna škola">Osnovna škola</option>
+        <option value="Srednja škola">Srednja škola</option>
+    </select>
 
     <label>Ocjena</label>
-    <textarea name="ocjena" rows="3"></textarea>
-
+    <div class="radio-group">
+        <label><input type="radio" name="ocjena" value="A" required> A</label>
+        <label><input type="radio" name="ocjena" value="B"> B</label>
+        <label><input type="radio" name="ocjena" value="C"> C</label>
+        <label><input type="radio" name="ocjena" value="D"> D</label>
+        <label><input type="radio" name="ocjena" value="E"> E</label>
+        <label><input type="radio" name="ocjena" value="F"> F</label>
+    </div>
+    <br>
     <label>Zahvala kumu</label>
     <textarea name="zahvala" rows="4"></textarea>
 
@@ -139,7 +151,10 @@ if (isset($_POST['spremi'])) {
     </select>
 
     <br><br>
-    <button type="submit" name="spremi">Spremi izvještaj</button>
+    <div class="form-actions">
+        <a href="reports.php" class="btn-cancel">Odustani</a>
+        <button type="submit" name="spremi" class="btn-save">Spremi izvještaj</button>
+    </div>
 
 </form>
 

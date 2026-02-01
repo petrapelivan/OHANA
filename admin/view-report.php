@@ -29,10 +29,11 @@ $report = $result->fetch_assoc();
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin-css.css">
     <title>Pregled izvještaja</title>
 </head>
 <body>
+    <main class="forma1">
     <h1>Izvještaj #<?= $report['id'] ?></h1>
     <?php if (!empty($report['kumce_slika'])): ?>
         <div class="kumce-slika">
@@ -58,6 +59,6 @@ $report = $result->fetch_assoc();
     <p><?= nl2br($report['zahvala']) ?></p>
 
     <a href="reports.php" class="back-link"> Natrag na izvještaje</a>
-
+    </main>
 </body>
 </html>
